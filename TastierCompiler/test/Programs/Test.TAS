@@ -1,0 +1,120 @@
+program Test
+{
+	
+	// creating a template for records
+	init game
+	{
+		int id;
+		bool isAvailable;
+	};
+	
+	constant int thisConstant := 3;
+	
+	// A function that returns an int Identifier
+	int: testing1()
+	{
+		int a;
+		a := 10;
+		return a;
+	}
+	
+	// A function that returns an bool Identifier
+	bool: testing2()
+	{
+		bool a;
+		
+		a := true;
+		
+		return a;
+	}
+	
+	// parameter function and return
+	int: test4(int i int a int b int c)
+	{
+		a := a + 1;
+		return a;
+	}
+	
+	// testing identifiers for parameters
+	void test6(int i int a){}
+	
+	// Main function
+	void Main()
+	{
+		//thisConstant  := 1;
+		write thisConstant;
+		
+		// creating a record instance
+		create game mario
+		(
+			int id := 1001;
+			bool isAvailable := true;
+		);
+		writeString 'Record Access';
+		writeRecordVal mario :> id;
+		
+		int i;
+		int [5]array;
+		
+		// array initialising 
+		array := {1 2 3 4 5};
+		writeString '1D array';
+		writeArray array[0];
+		
+		int [2][2]array1;
+		array[0][0] := 4;
+		array[0][1] := 129;
+		writeString '2D array';
+		writeArray array1[0][0];
+		writeArray array1[0][1];
+		
+		i := 3;
+		// switch statement
+		switch(i)
+		{
+			case 1:
+				writeString 'case 1';
+			case 2:
+				writeString 'case 2';
+			case 3:
+				writeString 'case 3';
+			default:
+				writeString 'default';
+		}
+		
+		writeString 'For Loop';
+		// for loop statement
+		for(i := 0; i < 10; i := i + 1)
+		{
+			write i;
+		}
+		
+		string val;
+		val := 'This';
+		writeString val 'is a multiple line write';
+		
+		//testing functions returns
+		int testInt;
+		testInt := testing1();
+		write testInt;
+		
+		// testing function returns
+		bool testBool;
+		testBool := testing2();
+		writeString 'return of ident value';
+		write testBool;
+		
+		// testing parameters for functions
+		writeString 'return of a variable';
+		i := 15;
+		testInt := test4(i 1 2 3);
+		writeString 'return function parameters';
+		write testInt;
+		
+		// conditional assignment.
+		testInt := 3 > 2 ? 4 : 2;
+		writeString 'Condintion Assignment';
+		write testInt;
+	}
+}	
+	

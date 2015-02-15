@@ -1,0 +1,23 @@
+program Test
+{
+  void Main()
+  {
+	int i;
+	for(i := 0; i < 3; i := i + 1)
+	{
+		switch(i)
+		{
+			case 0: 
+				write i;
+			case 1:
+				write i;
+			case 2:
+				write i;
+			default:
+				write 999;
+		}
+		write i;
+	}
+  }
+}	
+	

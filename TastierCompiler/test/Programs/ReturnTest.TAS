@@ -1,0 +1,16 @@
+program Test
+{
+  int: testing()
+  {
+	return 4;
+  }
+  
+  void Main()
+  {
+	int i;
+
+	i := testing();
+	write i;
+  }
+}	
+	
